@@ -12,7 +12,7 @@ default: &default
   # Features for users:
   can_change_password: true
   can_disable_account: true
-  can_use_yubikey: true
+  can_use_yubikey: false
 
   # If a user logs in, but the username doesn't exist, is the account
   # automatically created?
@@ -25,7 +25,9 @@ default: &default
     # generated one?
     random_password: true
 
-  # Enable the anti phishing support (TODO: A better description!)
+  # Enable the anti phishing support. If enabled, the user will be presented
+  # with a link-less login page when not logged in. If there are links and this
+  # is enabled, it's probably a phising attempt.
   protect_phishing: true
 
   # A name shown to clients. Just an identifier, used mostly in views.
