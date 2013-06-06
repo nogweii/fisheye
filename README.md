@@ -33,6 +33,31 @@ person, but any number of people can use it.
 
 [seatbelt]: https://pip.verisignlabs.com/seatbelt.do
 
+## Setup
+
+1. Download fisheye:
+   ```bash
+   git clone https://github.com/evaryont/fisheye.git
+   ```
+
+2. Make sure all of the dependencies are installed:
+   ```bash
+   bundle install --deployment
+   ```
+
+3. Edit the configuration file for masq:
+   ```
+   vim config/masq.yml
+   ```
+
+4. Run migrations to get the DB schema loaded:
+   ```
+   bundle exec rake db:migrate
+   ```
+
+When you first run Rails, `browserid-provider` will generate a private certificate
+in config/browserid\_provider.pem. Keep it safe.
+
 ## License
 
 Licensed under the AGPLv3, which simply stated means that even though it's a web
