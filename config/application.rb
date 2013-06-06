@@ -60,14 +60,13 @@ module Fisheye
     config.assets.version = '1.0'
 
     # Load up BrowserID::Provider middleware
-    config.middleware.use BrowserID::Provider, :server_name         => "fish-eye.heroku.com",
-                                               :authentication_path => "/masq/login",
-                                               :provision_path      => "/browserid/provision",
-                                               :certify_path        => "/browserid/certify",
-                                               :whoami_path         => "/browserid/whoami",
-                                               :whoami_path         => "/browserid/whoami",
-                                               :jquery_path         => "/assets/javascripts/jquery.js",
-                                               :private_key_path    => "config/browserid_provider.pem",
-                                               :browserid_url       => "login.persona.org"
+    config.middleware.use BrowserID::Provider, :server_name      => "fish-eye.heroku.com",
+                                               :login_path       => "/masq/login",
+                                               :provision_path   => "/browser-id/provision",
+                                               :certify_path     => "/browser-id/certify",
+                                               :whoami_path      => "/browser-id/whoami",
+                                               :jquery_path      => "/assets/javascripts/jquery.js",
+                                               :private_key_path => "config/browserid_provider.pem",
+                                               :browserid_url    => "login.persona.org"
   end
 end
