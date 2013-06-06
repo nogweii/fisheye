@@ -1,0 +1,170 @@
+---
+default: &default
+  # Whether to send an activation email
+  send_activation_mail: true
+
+  # If the server uses Basic Auth, should masq trust it?
+  trust_basic_auth: false
+
+  # Allow anonymous users to register an OpenID with masq?
+  disable_registration: false
+
+  # Features for users:
+  can_change_password: true
+  can_disable_account: true
+  can_use_yubikey: true
+
+  # If a user logs in, but the username doesn't exist, is the account
+  # automatically created?
+  create_auth_ondemand:
+    enabled: false
+    # Since the name might just just be a username without a domain (e.g. 'bob'
+    # vs 'bob@example.com'), what should the default domain be?
+    default_mail_domain: example.com
+    # Override the freshly made account's login password with a randomly
+    # generated one?
+    random_password: true
+
+  # Enable the anti phishing support (TODO: A better description!)
+  protect_phishing: true
+
+  # A name shown to clients. Just an identifier, used mostly in views.
+  name: masq
+
+  # Where are we on the web? What domain to use?
+  host: 
+
+  # The email address in the From: address for the activation emails
+  email: info@your.domain.com
+
+  # Enable/disable the forced use of HTTPS
+  use_ssl: false
+
+  # Whether to use the full email ('bob@example.com') or just the username
+  # ('bob') as the login key
+  email_as_login: true
+
+  # Yubikey/Yubico API information
+  yubico:
+    id: 99
+    api_key: youryubicoapikey
+
+  # A list of domains (Relying Parties in OpenID nomenclature) that masq should
+  # trust. These will skip the antiphising measures automatically.
+  trusted_domains:
+    - stackoverflow.com
+
+  # XML mappings for OpenID's Attribute Exchange extension. Good as-is, you
+  # probably shouldn't need to touch this.
+  attribute_mappings:
+    nickname:
+      - nickname
+      - http://axschema.org/namePerson/friendly
+    email:
+      - email
+      - http://axschema.org/contact/email
+    fullname:
+      - fullname
+      - http://axschema.org/namePerson
+    postcode:
+      - postcode
+      - http://axschema.org/contact/postalCode/home
+    country:
+      - country
+      - http://axschema.org/contact/country/home
+    language:
+      - language
+      - http://axschema.org/pref/language
+    timezone:
+      - timezone
+      - http://axschema.org/pref/timezone
+    gender:
+      - gender
+      - http://axschema.org/person/gender
+    date_of_birth:
+      - dob
+      - http://axschema.org/birthDate
+    dob_day:
+      - dob_day
+      - http://axschema.org/birthDate/birthday
+    dob_month:
+      - dob_month
+      - http://axschema.org/birthDate/birthMonth
+    dob_year:
+      - dob_year
+      - http://axschema.org/birthDate/birthYear
+    address:
+      - http://axschema.org/contact/postalAddress/home
+    address_additional:
+      - http://axschema.org/contact/postalAddressAdditional/home
+    city:
+      - http://axschema.org/contact/city/home
+    state:
+      - http://axschema.org/contact/state/home
+    company_name:
+      - http://axschema.org/company/name
+    job_title:
+      - http://axschema.org/company/title
+    address_business:
+      - http://axschema.org/contact/postalAddress/business
+    address_additional_business:
+      - http://axschema.org/contact/postalAddressAdditional/business
+    postcode_business:
+      - http://axschema.org/contact/postalCode/business
+    city_business:
+      - http://axschema.org/contact/city/business
+    state_business:
+      - http://axschema.org/contact/state/business
+    country_business:
+      - http://axschema.org/contact/country/business
+    phone_home:
+      - http://axschema.org/contact/phone/home
+    phone_mobile:
+      - http://axschema.org/contact/phone/cell
+    phone_work:
+      - http://axschema.org/contact/phone/business
+    phone_fax:
+      - http://axschema.org/contact/phone/fax
+    im_aim:
+      - http://axschema.org/contact/IM/AIM
+    im_icq:
+      - http://axschema.org/contact/IM/ICQ
+    im_msn:
+      - http://axschema.org/contact/IM/MSN
+    im_yahoo:
+      - http://axschema.org/contact/IM/Yahoo
+    im_jabber:
+      - http://axschema.org/contact/IM/Jabber
+    im_skype:
+      - http://axschema.org/contact/IM/Skype
+    image_default:
+      - http://axschema.org/media/image/default
+    biography:
+      - http://axschema.org/media/biography
+    web_default:
+      - http://axschema.org/contact/web/default
+    web_blog:
+      - http://axschema.org/contact/web/blog
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  trusted_domains:
+    - trusted-domain.com
+
+production:
+  <<: *default
+  use_ssl: true
+  ssl_certificate_common_name: your.domain.com
+  ssl_certificate_sha1: D2:1B:D8:C4:39:B7:EE:10:DA:E2:4E:0A:65:98:8E:27:C9:32:4B:F0
+
+heroku:
+  <<: *default
+  host: fish-eye.herokuapp.com
+  use_ssl: true
+  # The following information retreived via `gnutls-cli -p 443
+  # fish-eye.herokuapp.com`.
+  ssl_certificate_common_name: '*.herokuapp.com'
+  ssl_certificate_sha1: 33:A1:3A:84:2E:89:52:82:9E:D3:A7:AD:86:C1:9A:89:B9:72:C1:9A
