@@ -148,6 +148,8 @@ default: &default
 
 development:
   <<: *default
+  host: localhost:3000
+  email: root@localhost
 
 test:
   <<: *default
