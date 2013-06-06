@@ -2,11 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Heroku/production deployments use PostgreSQL
+group :development, :staging do
+  gem "pg"
+end
 
-gem 'sqlite3'
-
+# And local development/testing uses SQLite
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
