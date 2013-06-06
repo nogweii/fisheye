@@ -58,5 +58,8 @@ module Fisheye
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Load up BrowserID::Provider middleware
+    config.middleware.use BrowserID::Provider, :server_name => "ev-fisheye.heroku.com"
   end
 end
