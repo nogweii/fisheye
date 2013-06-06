@@ -34,9 +34,9 @@ default: &default
   name: masq
 
   # Where are we on the web? What domain to use?
-  host: 
+  host:
 
-  # The email address in the From: address for the activation emails
+  # The email address in the From: header for the activation emails
   email: info@your.domain.com
 
   # Enable/disable the forced use of HTTPS
@@ -152,6 +152,7 @@ development:
   <<: *default
   host: localhost:3000
   email: root@localhost
+  send_activation_mail: false
 
 test:
   <<: *default
