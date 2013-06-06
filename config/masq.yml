@@ -44,7 +44,10 @@ default: &default
 
   # Whether to use the full email ('bob@example.com') or just the username
   # ('bob') as the login key
-  email_as_login: true
+  #
+  # NB: This is currently broken. See
+  # https://github.com/dennisreimann/masq/issues/3
+  email_as_login: false
 
   # Yubikey/Yubico API information
   yubico:
