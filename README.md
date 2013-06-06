@@ -46,12 +46,12 @@ person, but any number of people can use it.
    ```
 
 3. Edit the configuration file for masq:
-   ```
+   ```bash
    vim config/masq.yml
    ```
 
 4. Run migrations to get the DB schema loaded:
-   ```
+   ```bash
    bundle exec rake db:migrate
    ```
 
