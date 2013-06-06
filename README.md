@@ -1,4 +1,4 @@
-# fisheye
+# fisheye - A multi-tenant, multi-protocol identity provider
 
 Me, online, in all of it's fabulousness. Also, it tries really hard to be the
 one-stop-shop for all of my authentication needs. Which currently are:
@@ -8,16 +8,30 @@ one-stop-shop for all of my authentication needs. Which currently are:
 
 This application is fairly barebones, it doesn't need to do much outside of
 authenticating a person. It's not a web site -- it only does OpenID & BrowserID,
-and even then, it doesn't actually do that thanks to the fantastic Ruby
-community. :-)
+and even then, it doesn't actually do that itself, thanks to the fantastic Ruby
+community. :smile: This is mostly glue so that other libraries are exposed.
 
 Fisheye is designed to be multi-tenant, meaning that it is not only for just one
 person, but any number of people can use it.
 
 ## Thanks
 
-- masq
-- browserid-provider
+- [masq](https://github.com/dennisreimann/masq)
+- [browserid-provider](https://github.com/ringe/browserid-provider)
+
+## Features
+
+- Single-sign-on across all identities -- they aren't just 2+ protocols that
+  happen to be on the same server, but they are indeed supposed to be different
+  representations of the exact same user. (Which of course means that your
+  password works for both OpenID **and** BrowserID!)
+- Includes [VeriSign's SeatBelt][seatbelt] configuration (thanks to masq),
+  which is a Firefox plugin that will auto-fill OpenID input fields on websites
+  that support OpenID. Neat!
+- Email activation, 'cause it's nice to know that there is a real email on the
+  other side of these identities.
+
+[seatbelt]: https://pip.verisignlabs.com/seatbelt.do
 
 ## License
 
