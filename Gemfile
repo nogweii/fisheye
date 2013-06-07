@@ -10,6 +10,9 @@ end
 # And local development/testing uses SQLite
 group :development, :test do
   gem 'sqlite3'
+  gem 'jazz_hands'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Gems used only for assets and not required
