@@ -37,7 +37,7 @@ module Fisheye
                                                :provision_path   => "/browser-id/provision",
                                                :certify_path     => "/browser-id/certify",
                                                :whoami_path      => "/browser-id/whoami",
-                                               :jquery_path      => "http://code.jquery.com/jquery-1.10.1.min.js",
+                                               :jquery_path      => "/jquery-1.8.3.min.js",
                                                :private_key_path => "config/browserid_provider.pem",
                                                #:browserid_url    => "login.persona.org"
                                                :browserid_url    => "checkmyidp.org"
