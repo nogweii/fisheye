@@ -39,7 +39,8 @@ module Fisheye
                                                :whoami_path      => "/browser-id/whoami",
                                                :jquery_path      => "http://code.jquery.com/jquery-1.10.1.min.js",
                                                :private_key_path => "config/browserid_provider.pem",
-                                               :browserid_url    => "login.persona.org"
+                                               #:browserid_url    => "login.persona.org"
+                                               :browserid_url    => "checkmyidp.org"
   end
 end
 require %Q(#{Fisheye::Application.config.root}/lib/browserid_current_masq_user.rb)
