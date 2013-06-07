@@ -43,4 +43,5 @@ module Fisheye
                                                :browserid_url    => "checkmyidp.org"
   end
 end
+# Load the monkey-patch to link BrowserID::Provider to Masq
 require %Q(#{Fisheye::Application.config.root}/lib/browserid_current_masq_user.rb)
