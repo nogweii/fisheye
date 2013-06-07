@@ -1,241 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Fisheye by evaryont</title>
+    <link rel="stylesheet" href="http://evaryont.github.io/fisheye/stylesheets/styles.css">
+    <link rel="stylesheet" href="http://evaryont.github.io/fisheye/stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://evaryont.github.io/fisheye/javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
-
-
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
   </head>
   <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
 
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
+      <header>
+        <h1>Fisheye</h1>
+        <p>A multi-tenant, multi-protocol identity server (OpenID, BrowserID)</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/evaryont/fisheye" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/evaryont/fisheye/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/evaryont/fisheye/tarball/master" class="button">TAR</a></li>
+          </ul>
         </div>
+      </div><!-- end banner -->
 
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="fisheye---a-multi-tenant-multi-protocol-identity-provider" class="anchor" href="index.html#fisheye---a-multi-tenant-multi-protocol-identity-provider"><span class="octicon octicon-link"></span></a>fisheye - A multi-tenant, multi-protocol identity provider</h1>
 
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
+<p>Me, online, in all of it's fabulousness. Also, it tries really hard to be the
+one-stop-shop for all of my authentication needs. Which currently are:</p>
 
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
+<ul>
+<li>BrowserID</li>
+<li>OpenID</li>
+</ul><p>This application is fairly barebones, it doesn't need to do much outside of
+authenticating a person. It's not a web site -- it only does OpenID &amp; BrowserID,
+and even then, it doesn't actually do that itself, thanks to the fantastic Ruby
+community. <img class="emoji" title=":smile:" alt=":smile:" src="https://a248.e.akamai.net/assets.github.com/images/icons/emoji/smile.png" height="20" width="20" align="absmiddle"> This is mostly glue so that other libraries are exposed.</p>
 
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
+<p>Fisheye is designed to be multi-tenant, meaning that it is not only for just one
+person, but any number of people can use it.</p>
 
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
+<h2>
+<a name="thanks" class="anchor" href="index.html#thanks"><span class="octicon octicon-link"></span></a>Thanks</h2>
 
-      <div id="footer">&nbsp;</div>
+<ul>
+<li><a href="https://github.com/dennisreimann/masq">masq</a></li>
+<li><a href="https://github.com/ringe/browserid-provider">browserid-provider</a></li>
+</ul><h2>
+<a name="features" class="anchor" href="index.html#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Single-sign-on across all identities -- they aren't just 2+ protocols that
+happen to be on the same server, but they are indeed supposed to be different
+representations of the exact same user. (Which of course means that your
+password works for both OpenID <strong>and</strong> BrowserID!)</li>
+<li>Includes <a href="https://pip.verisignlabs.com/seatbelt.do">VeriSign's SeatBelt</a> configuration (thanks to masq),
+which is a Firefox plugin that will auto-fill OpenID input fields on websites
+that support OpenID. Neat!</li>
+<li>Email activation, 'cause it's nice to know that there is a real email on the
+other side of these identities.</li>
+</ul><h2>
+<a name="setup" class="anchor" href="index.html#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<ol>
+<li>
+<p>Download fisheye:</p>
+
+<div class="highlight"><pre>git clone https://github.com/evaryont/fisheye.git
+</pre></div>
+</li>
+<li>
+<p>Make sure all of the dependencies are installed:</p>
+
+<div class="highlight"><pre>bundle install --deployment
+</pre></div>
+</li>
+<li>
+<p>Edit the configuration file for masq:</p>
+
+<pre><code>vim config/masq.yml
+</code></pre>
+</li>
+<li>
+<p>Run migrations to get the DB schema loaded:</p>
+
+<pre><code>bundle exec rake db:migrate
+</code></pre>
+</li>
+</ol><p>When you first run Rails, <code>browserid-provider</code> will generate a private certificate
+in config/browserid_provider.pem. Keep it safe.</p>
+
+<h2>
+<a name="license" class="anchor" href="index.html#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Licensed under the AGPLv3, which simply stated means that even though it's a web
+site you must still publish the source code, including any changes.</p>
+
+<pre><code>Copyright (C) 2013 Colin Shea
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/evaryont">evaryont</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
