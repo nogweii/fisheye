@@ -1,5 +1,7 @@
 # fisheye - A multi-tenant, multi-protocol identity provider
 
+[![Dependency Status](https://gemnasium.com/evaryont/fisheye.png)](https://gemnasium.com/evaryont/fisheye)
+
 Me, online, in all of it's fabulousness. Also, it tries really hard to be the
 one-stop-shop for all of my authentication needs. Which currently are:
 
