@@ -21,6 +21,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'puma'
-gem 'browserid-provider'
-gem 'masq'
+# Use Puma as our web server
+gem "puma"
+
+gem 'browserid-provider', '~> 0.5.5'
+gem 'masq', '~> 0.2.8'
