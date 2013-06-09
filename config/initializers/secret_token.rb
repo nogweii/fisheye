@@ -10,6 +10,7 @@ else
     Fisheye::Application.config.secret_token = SecureRandom.hex(64)
   end
 
+  Dir.mkdir "#{Fisheye::Application.config.root}/tmp" # make sure the tmp directory exists (Heroku)
   # A cache file ensures the tokens will stay static across restarts.
   File.open("#{Fisheye::Application.config.root}/tmp/cookie_token.rb", 'w') do |token_cache|
     token_cache.puts "Fisheye::Application.config.secret_token = '#{Fisheye::Application.config.secret_token}'"
