@@ -98,6 +98,9 @@ GEM
       pry-stack_explorer (~> 0.4.9)
       railties (>= 3.0, < 5.0)
     journey (1.0.4)
+    jquery-rails (3.0.0)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     json (1.8.0)
     json-jwt (0.5.2)
       activesupport (>= 2.3)
@@ -217,6 +220,7 @@ DEPENDENCIES
   browserid-provider (~> 0.5.5)
   coffee-rails (~> 3.2.1)
   jazz_hands
+  jquery-rails
   masq (~> 0.2.8)
   pg
   puma
