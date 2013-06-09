@@ -32,7 +32,7 @@ module Fisheye
     config.assets.version = '1.0'
 
     # Load up BrowserID::Provider middleware
-    config.middleware.use BrowserID::Provider, :server_name      => "fish-eye.heroku.com",
+    config.middleware.use BrowserID::Provider, :server_name      => "evaryont.me",
                                                :login_path       => "/masq/login",
                                                :provision_path   => "/browser-id/provision",
                                                :certify_path     => "/browser-id/certify",
