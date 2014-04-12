@@ -19,8 +19,10 @@ gem 'turbolinks'
 gem 'simple_form'
 gem 'slim-rails'
 
-gem 'unicorn'
-gem 'unicorn-rails'
+group :production do
+  gem 'unicorn'
+  gem 'unicorn-rails'
+end
 
 group :development do
   gem 'spring'
@@ -28,6 +30,9 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'letter_opener'
 end
+
+gem 'jazz_hands'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
