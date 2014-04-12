@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~> 3.2.16'
 
 # Heroku/production deployments use PostgreSQL
 group :development, :staging do
@@ -23,8 +23,5 @@ group :assets do
   gem 'jquery-rails'
 end
 
-# Use Puma as our web server
-gem "puma"
-
-gem 'browserid-provider', '~> 0.5.5'
-gem 'masq', '~> 0.2.8'
+gem 'browserid-provider'
+gem 'masq', '~> 0.3.2'
